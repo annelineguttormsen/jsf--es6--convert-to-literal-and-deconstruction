@@ -1,19 +1,39 @@
 # Task
 
+Retrieve all comments from an API and display the comments that have a postId of 1 on the page.
 
+This should be done using **template literals** for HTML, and **parameter decontruction** in the **mapping** and **filter** functions
+
+API URL: https://jsonplaceholder.typicode.com/comments
+
+HTML format for each comment is:
+```
+<article>
+    <h2>NAME</h2>
+    <a href="emilto:EMAIL">EMAIL</a>
+    <p>BODY</p>
+    <div>Post ID: POST_ID</div>
+</article>
+```
 
 **Note:** Styles are provided for you in master.css. Look in the file to find the approriate class names to use on your HTML elements.
 
 ### Example
 
-[The example is here](https://link).
+[The example is here](https://jsf-es6-convert-to-literal-and-deconstruction.now.sh).
 
-## Task
+## Available branches
 
-Clone or download this repository onto your computer.  You will start out in the "master" branch which contains an empty project.
+1. **Master** - Empty project. Complete the task from scratch.
+2. **Skeleton** - Basic structure. The task is to fill in skeleton to match the answer.
+3. **ES5** - Working answer using old sytax.  The task is to convert to ES6 syntax.
+4. **Answer** - Completed answer (same as example URL)
 
-Try to recreate the website above.  Firstly, try to create it without any help.  If you are unsure of what to do, you can follow the steps below.  If the steps don't help, checkout out the "answer" branch from this repository.  The answer branch contains a working example.
 
 ## Steps
 
-1. 
+1. Fetch the data from the API URL.  The data is an array of comments
+2. Filter out posts that don't have a postId of 1
+3. Map from the objects to HTML using template literals.
+4. Join the template literals together using `.join("")`.
+5. Set the HTML as the innerHTML of the `#comments` `div`.
