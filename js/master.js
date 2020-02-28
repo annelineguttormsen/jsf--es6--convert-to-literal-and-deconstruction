@@ -9,19 +9,17 @@ function handleAPIResponse(comments) {
     console.log(comments);
     
     // only get comments from post 1
-    const filteredComments = comments.filter(function({ postId }) {
-        return postId === 1;
+    const filteredComments = comments.filter(function(comment) {
+        return comment.postId === 1;
     });
     // map data to HTML
-    const htmlArray = filteredComments.map(function({ postId, name, email, body }) {
-        return `
-            <article>
-                <h2>${name}</h2>
-                <a href="emilto:${email}">${email}</a>
-                <p>${body}</p>
-                <div>Post ID: ${postId}</div>
-            </article>
-        `;
+    const htmlArray = filteredComments.map(function(comment) {
+        return '<article>' +
+                    '<h2>' + comment.name + '</h2>' +
+                    '<a href="emilto:' + comment.email + '">' + comment.email + '</a>' +
+                    '<p>' + comment.body + '</p>' +
+                    '<div>Post ID: ' + comment.postId + '</div>' +
+                '</article>';
     });
     // join the HTML into a single string
     const html = htmlArray.join("");
